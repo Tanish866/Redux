@@ -1,6 +1,7 @@
 import { ADD_TODO, EDIT_TODO, REMOVE_TODO } from "../constants";
 
-function Reducer(todos = [], action){
+
+function todoReducer(todos = [], action){
     if(action.type == ADD_TODO){
         return [...todos, {id: action.payload.id, title: action.payload.title}];
     }
@@ -19,4 +20,4 @@ function Reducer(todos = [], action){
     }
     return todos;
 }
-export default Reducer;
+export default todoReducer;
