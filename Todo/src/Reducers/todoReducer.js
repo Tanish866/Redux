@@ -1,6 +1,5 @@
 import { ADD_TODO, EDIT_TODO, REMOVE_TODO } from "../constants";
 
-
 function todoReducer(todos = [], action){
     if(action.type == ADD_TODO){
         return [...todos, {id: action.payload.id, title: action.payload.title}];
@@ -14,9 +13,7 @@ function todoReducer(todos = [], action){
         });
     }
     if(action.type == REMOVE_TODO){
-        return todos.filter(todo => {
-            if(action.payload != todo.id);
-        })
+        return todos.filter(todo => todo.id != action.payload);
     }
     return todos;
 }
